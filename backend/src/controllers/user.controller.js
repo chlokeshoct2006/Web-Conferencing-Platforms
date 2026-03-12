@@ -40,30 +40,38 @@ const login = async (req, res) => {
 const register = async (req, res) => {
     const { name, username, password } = req.body;
 
-
     try {
+
         const existingUser = await User.findOne({ username });
+
         if (existingUser) {
-            return res.status(httpStatus.FOUND).json({ message: "User already exists" });
+            return res.status(httpStatus.CONFLICT).json({
+                message: "User already exists"
+            });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = new User({
-            name: name,
-            username: username,
+            name,
+            username,
             password: hashedPassword
         });
 
         await newUser.save();
 
-        res.status(httpStatus.CREATED).json({ message: "User Registered" })
+        return res.status(httpStatus.CREATED).json({
+            message: "User Registered Successfully"
+        });
 
     } catch (e) {
-        res.json({ message: `Something went wrong ${e}` })
-    }
 
-}
+        return res.status(500).json({
+            message: `Something went wrong ${e}`
+        });
+
+    }
+};
 
 
 const getUserHistory = async (req, res) => {
@@ -76,7 +84,7 @@ const getUserHistory = async (req, res) => {
     } catch (e) {
         res.json({ message: `Something went wrong ${e}` })
     }
-}
+};
 
 const addToHistory = async (req, res) => {
     const { token, meeting_code } = req.body;
@@ -95,7 +103,7 @@ const addToHistory = async (req, res) => {
     } catch (e) {
         res.json({ message: `Something went wrong ${e}` })
     }
-}
+};
 
 
-export { login, register, getUserHistory, addToHistory }
+export { login, register, getUserHistory, addToHistory };
