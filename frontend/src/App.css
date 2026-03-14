@@ -1,0 +1,119 @@
+/* Navbar */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+}
+
+.navButtons button{
+  margin-left:15px;
+  padding:8px 16px;
+  border:none;
+  background:#ff9839;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* Landing layout */
+
+.landingMainContainer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px;
+}
+
+/* Text */
+
+.landingText h1{
+  font-size:48px;
+}
+
+.landingText span{
+  color:#ff9839;
+}
+
+.landingText p{
+  margin-top:15px;
+  font-size:18px;
+}
+
+/* Buttons */
+
+.landingActions{
+  margin-top:30px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.primaryBtn{
+  background:#ff9839;
+  border:none;
+  padding:12px 22px;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  font-size: 16px;
+}
+
+.primaryBtn:hover{
+  background:#e8872e;
+}
+
+.secondaryBtn{
+  text-decoration:none;
+  border:2px solid #ff9839;
+  padding:10px 20px;
+  border-radius:6px;
+  color: #ff9839;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.secondaryBtn:hover{
+  background:#fff3e8;
+}
+
+/* ✅ NEW: hint text below buttons */
+.landingHint {
+  margin-top: 20px;
+  font-size: 14px !important;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Home page navbar */
+.navBar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Meet container */
+.meetContainer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px;
+}
+
+.leftPanel{
+  flex:1;
+}
+
+.rightPanel img{
+  width:420px;
+}
+
+/* Image */
+
+.landingImage img{
+  width:420px;
+}
