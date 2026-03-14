@@ -16,8 +16,9 @@ const io = connectToSocket(server);
 app.set("port", process.env.PORT || 8000);
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || "*",  // ✅ FIXED: Was accepting all origins — restrict in production
-    methods: ["GET", "POST"]
+    origin: process.env.CLIENT_URL || "*",
+    methods: ["GET", "POST"],
+    credentials: true
 }));
 
 app.use(express.json({ limit: "40kb" }));
